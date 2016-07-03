@@ -1,0 +1,19 @@
+{
+  "name": "phhbokmark2-crud-proto",
+  "version": "1.0.0",
+  "description": "reinoare",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AC3ROZ/phhbokmark2-crud-proto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AC3ROZ/phhbokmark2-crud-proto/issues"
+  },
+  "homepage": "https://github.com/AC3ROZ/phhbokmark2-crud-proto#readme"
+}
