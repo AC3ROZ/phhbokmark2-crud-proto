@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/AC3ROZ/phhbokmark2-crud-proto/issues"
   },
-  "homepage": "https://github.com/AC3ROZ/phhbokmark2-crud-proto#readme"
+  "homepage": "https://github.com/AC3ROZ/phhbokmark2-crud-proto#readme",
+  "dependencies": {
+    "express": "*",
+    "jade": "^1.11.0"
+  }
 }
