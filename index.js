@@ -16,7 +16,10 @@ app.set('view engine', 'jade')
 app.set('views', __dirname + '/views')
 
 app.get('/', (req, res)=>{
-    res.render('index', {title: 'Himanoa'});
+    connection.query('SELECT * FROM bookmark', (err, result, fields) => {
+        console.log(result);
+        res.render('index', {datas: result});
+    });
 });
 app.get('/add', (req, res) => {
     res.render('add');
