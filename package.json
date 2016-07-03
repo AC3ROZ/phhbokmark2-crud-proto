@@ -18,6 +18,7 @@
   "homepage": "https://github.com/AC3ROZ/phhbokmark2-crud-proto#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "cheerio-httpcli": "^0.6.8",
     "express": "*",
     "jade": "^1.11.0"
   }
