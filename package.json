@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AC3ROZ/phhbokmark2-crud-proto#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "*",
     "jade": "^1.11.0"
   }

@@ -1,0 +1,11 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title= 追加画面
+    body
+        h1="強い意志で追加していけ"
+        form(method='POST', target='./add')
+            input(type='text', name='url', value='')
+            textarea(name='comment', rows=4, cols=40)
+            input(type='submit', value='ok')
