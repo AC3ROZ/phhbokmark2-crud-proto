@@ -17,9 +17,13 @@ app.set('views', __dirname + '/views')
 
 app.get('/', (req, res)=>{
     connection.query('SELECT * FROM bookmark', (err, result, fields) => {
-        console.log(result);
         res.render('index', {datas: result});
     });
+});
+app.get('/read', (req, res) => {
+    connection.query('SELECT * FROM bookmark', (err, result, fields) => {
+        res.render('read', {datas: result});
+    });   
 });
 app.get('/add', (req, res) => {
     res.render('add');
@@ -41,5 +45,37 @@ app.post('/add', (req, res) => {
             });
     });   
 });
-
+app.post('/delete', (req, res)=>{
+    let deleteId = req.body.id;
+    connection.query('DELETE FROM `bookmark` WHERE `id` = ?',[deleteId], (err, result, fields) => {
+        if(err){
+            console.err(err);
+        }
+    });
+});
+app.get('/update/:id', (req, res) => {
+    let id = req.params.id;
+    connection.query('SELECT * FROM `bookmark` WHERE `id` = ?', [id], (err, result, fields) => {
+        console.log(result);
+        if(err){
+            console.err(err);
+        }
+        res.render('update', { data: result[0] });
+    })
+})
+app.post('/update/:id', (req, res) => {
+    let updateId = req.params.id;
+    client.fetch(req.body.url, {}, (err, $, res) => {
+        if(err){
+            console.error(err);
+        }
+        let pageTitle = $('title').text();
+        connection.query('UPDATE `bookmark` SET url=?, page_title=?, _comment=? WHERE `id` = ?',
+            [req.body.url, pageTitle, req.body.comment, updateId], (err, result, fields) => {
+                if(err){
+                    console.error(err);
+                }
+            });
+    });
+});
 app.listen(3000);

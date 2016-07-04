@@ -1,0 +1,12 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title='update' 
+    body
+        h1='update'
+        p=data.url
+        form(method='POST', target='/update')
+            input(type='text', name='url', value=data.url)
+            textarea(name='comment', rows=4, cols=40)=data._comment
+            input(type='submit', value='ok')

@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title= read 
+    body
+        h1='title'
+        ul
+            each data in datas
+                li
+                    div
+                        p=data.id
+                        p=data.url
+                        p=data.page_title
+                        p=data._comment
+                        form(method='POST', action='http://localhost:3000/delete')
+                            input(type='hidden', name='id', value=data.id)
+                            input(type='submit', value='delete')
